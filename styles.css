@@ -27,6 +27,7 @@
     box-shadow: 0 0 10px 2px #ccc;
     padding: 20px;
     width: 35%;
+    min-height: 350px;
 }
 
 form {
@@ -53,13 +54,18 @@ input{
 #profile{
     display: none;
 }
-
+#risk{
+    display: none;
+}
 
 #login-button{
     height:60px;
     background-color: black;
     color: white;
     font-size: large;
+    width: 100%;
+    margin-top:20px;
+    margin-bottom: 20px;
 }
 #login-show{
     display: none;
@@ -68,4 +74,11 @@ input{
     background-color: black;
     color: white;
     font-size: large;
+}
+#profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
 }

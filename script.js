@@ -14,8 +14,11 @@ async function submitForm(event, formId) {
     let loginButton =document.getElementById("login-button");
     let loginshow =document.getElementById("login-show");
     let profile=document.getElementById("profile");
+    let profileContainer=document.getElementById("profile-container");
+    let risk=document.getElementById("risk");
     loginButton.disabled = true;  // Disable the button
     loginButton.innerHTML = 'Loading...';
+    
 
   let email = formdata.get('login-email');
   let password = formdata.get('login-password');
@@ -37,22 +40,32 @@ async function submitForm(event, formId) {
     body: JSON.stringify(requestBody),
   });
 
-  const data= await response.json()
   loginButton.disabled = false;  // Enable the button
   loginButton.innerHTML = 'Login';
+  const data= await response.json()
+  
   if(data.ErrorCode){
     message.style.display="block";
+    risk.style.display="block";
     message.innerText=data.Description
+    risk.innerHTML= `Your risk score is ${data.fraud.score} and risk factor is ${data.fraud.ruleId}`;
   }else{
     form.style.display="none";
     profile.style.display="block";
+    // profileContainer.style.display="flex";
+    // profileContainer.style.flexDirection="column";
+    // profileContianer.style.alignItems="space-around";
+    profileContainer.style.minHeight="200px";
+    risk.style.display="block";
     profile.innerHTML=`<h2>Hi! ${data.Profile.Email[0].Value}</h2>`;
     loginshow.style.display="block";
-
+    risk.innerHTML= `Your risk score is ${data.fraud.score} and risk factor is ${data.fraud.ruleId}`;
+   
 
     
   }
   console.log(data)
+  form.reset();
 
     // Here you can send 'data' using AJAX to your server.
 }
@@ -61,10 +74,14 @@ function showLoginForm() {
     let loginForm = document.getElementById('login-form');
     let loginshow= document.getElementById("login-show");
     let profile=document.getElementById("profile");
+    let risk=document.getElementById("risk");
+    let profileContainer=document.getElementById("profile-container");
     loginForm.style.display = 'flex';
     loginForm.style.flexDirection="column";
     loginshow.style.display="none";
     profile.style.display="none";
+    risk.style.display="none";
+    profileContainer.style.minHeight="auto";
 
   }
   
