@@ -60,12 +60,12 @@ async function submitForm(event, formId) {
     profile.innerHTML=`<h2>Hi! ${data.Profile.Email[0].Value}</h2>`;
     loginshow.style.display="block";
     risk.innerHTML= `Your risk score is ${data.fraud.score} and risk factor is ${data.fraud.ruleId}`;
-   
+    form.reset();
 
     
   }
   console.log(data)
-  form.reset();
+ 
 
     // Here you can send 'data' using AJAX to your server.
 }

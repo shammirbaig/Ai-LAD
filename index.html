@@ -4,21 +4,22 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+    <h1 style="text-align: center; font-weight: bold;margin-top: 30px;  font-family: Arial, sans-serif;">AI Login Anomaly Detection</h1>
     <div id="parent">
    
     <div class="container">
       
         <div id="login" class="form-container">
-            <h2 style="text-align: center;margin-bottom: 20px;">AiLAD</h2>
+            <img src="./logo.png" style="display: block; margin: 0 auto; margin-bottom: 10px; width: 150px;">
             <form id="login-form" onsubmit="submitForm(event, 'login')">
                 <label for="login-email">Email</label>
                 <input type="email" id="login-email" name="login-email" required>
                 <label for="login-password">Password</label>
-                <input type="password" id="login-password" name="login-password" required><br>
+                <input type="password" id="login-password" name="login-password" required>
                 <label for="login-Ipaddress">IP Address</label>
-                <input type="text" id="login-Ipaddress" name="login-Ipaddress" required><br>
+                <input type="text" id="login-Ipaddress" name="login-Ipaddress" required>
                 <label for="Useragent">User Agent</label>
-                <input type="text" id="Useragent" name="Useragent" required><br>
+                <input type="text" id="Useragent" name="Useragent" required>
                 <div id="message"></div>
                 
                 <button id="login-button" onclick="submitForm(event, 'login')">Login</button>
