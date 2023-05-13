@@ -4,7 +4,7 @@
    padding: 0;
    box-sizing: border-box;
 }
-body {
+#parent {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@ label {
     margin: 5px 0 5px 0;
 }
 
-input[type="email"], input[type="password"] {
+input{
     padding: 5px;
     margin-bottom: 15px;
     border: 1px solid #ccc;

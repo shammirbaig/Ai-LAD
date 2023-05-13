@@ -19,11 +19,15 @@ async function submitForm(event, formId) {
 
   let email = formdata.get('login-email');
   let password = formdata.get('login-password');
+  let ipaddress =formdata.get('login-Ipaddress');
+  let useragent=formdata.get('Useragent');
   
   // Create the request body object
   let requestBody = {
     email: email,
-    password: password
+    password: password,
+    ipaddress:ipaddress,
+    useragent:useragent
   };
   const response = await fetch('https://2nh5mq5dg4.execute-api.us-east-1.amazonaws.com/default/ailad_backend?apikey=c7ff3702-ec4d-4c70-a7a8-2600f4c9b587', {
     method: 'POST',
